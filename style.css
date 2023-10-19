@@ -8,18 +8,20 @@
 :root {
   font-size: 62.5%;
 
-  --text-color: #E1E1E6;
-  --text-color-input: #7C7C8A;
+  --text-color: hsl(240, 9%, 89%);
+  --text-color-input: hsl(240, 6%, 51%);
+  --text-color-button-hover: hsl(195, 91%, 25%);
 
-  --bg-color: #000000;
-  --bg-thead: #092D38;
-  --bg-input: #06181C;
-  --bg-button: #065E7C;
+  --bg-color: hsl(0, 0%, 0%);
+  --bg-thead: hsl(194, 72%, 13%);
+  --bg-input: hsl(191, 65%, 7%);
+  --bg-button: hsl(195, 91%, 25%);
+  --bg-button-hover: hsl(0, 0%, 100%);
 
-  --table-color: #4A808C;
+  --table-color: hsl(191, 31%, 42%);
 }
 
-body, button, input {
+body, button, input, textarea {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -55,6 +57,13 @@ body {
   border-width: 0;
 }
 
+header {
+  display: flex;
+
+  justify-content: space-between;
+  padding-bottom: 9rem;
+}
+
 .search {
   display: flex;
 
@@ -63,7 +72,7 @@ body {
   gap: .8rem;
 }
 
-input {
+.search input {
   padding: 1.6rem;
 
   border-radius: .5rem;
@@ -77,7 +86,7 @@ input {
   font-weight: regular;
 }
 
-button {
+.search button {
   background: var(--bg-button);
   
   color: #FFFFFF;
@@ -94,21 +103,42 @@ button {
   gap: .9rem;
 
   font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all .4s ease-in;
 }
 
-header {
-  display: flex;
+.search button:hover {
+  background: var(--bg-button-hover);
+  color: var(--text-color-button-hover);
+}
 
-  justify-content: space-between;
-  padding-bottom: 9rem;
+.search button svg path {
+  transition: all .4s ease-in;
+}
+
+.search button:hover svg path {
+  fill: var(--text-color-button-hover);
+}
+
+.search button p {
+  line-height: 0;
 }
 
 table {
+  width: 100%;
+  border-collapse: collapse;
+
   border-radius: 1.2rem;
   border: var(--table-color) solid 1px;
-  border-collapse: collapse;
   
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--text-color);
 }
 
 thead {
@@ -117,4 +147,58 @@ thead {
 
 tr {
   border: var(--table-color) solid 1px;
+}
+
+table th {
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+  text-align: left;
+}
+
+table thead tr th:first-child {
+  border-top-left-radius: .4rem;
+}
+
+table th:first-child {
+  border-top-left-radius: .4rem;
+}
+
+table tr:nth-child(odd) {
+  background: hsla(194, 64%, 6%, 0.5);
+}
+
+table tr:nth-child(even) {
+  background: hsl(190, 66%, 7%);
+}
+
+td {
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+  padding-bottom: .8rem;
+}
+
+td.remove {
+  color: hsl(355, 91%, 66%);
+  font-weight: 700;
 }
