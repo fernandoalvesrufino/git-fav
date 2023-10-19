@@ -11,12 +11,15 @@
   --text-color: hsl(240, 9%, 89%);
   --text-color-input: hsl(240, 6%, 51%);
   --text-color-button-hover: hsl(195, 91%, 25%);
+  --text-color-danger: hsl(355, 91%, 66%);
 
   --bg-color: hsl(0, 0%, 0%);
   --bg-thead: hsl(194, 72%, 13%);
   --bg-input: hsl(191, 65%, 7%);
   --bg-button: hsl(195, 91%, 25%);
   --bg-button-hover: hsl(0, 0%, 100%);
+  --bg-line-odd: hsla(194, 64%, 6%, 0.5);
+  --bg-line-even: hsl(190, 66%, 7%);
 
   --table-color: hsl(191, 31%, 42%);
 }
@@ -86,13 +89,15 @@ header {
   font-weight: regular;
 }
 
+.search input::placeholder {
+  font-size: 1.6rem;
+}
+
 .search button {
   background: var(--bg-button);
   
   color: #FFFFFF;
   
-  text-transform: uppercase;
-
   padding: 1.2rem 3.2rem;
 
   border-radius: .5rem;
@@ -124,6 +129,9 @@ header {
 
 .search button p {
   line-height: 0;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 table {
@@ -163,11 +171,11 @@ table th:first-child {
 }
 
 table tr:nth-child(odd) {
-  background: hsla(194, 64%, 6%, 0.5);
+  background: var(--bg-line-odd);
 }
 
 table tr:nth-child(even) {
-  background: hsl(190, 66%, 7%);
+  background: var(--bg-line-even);
 }
 
 td {
@@ -199,6 +207,6 @@ td.user a p {
 }
 
 td.remove {
-  color: hsl(355, 91%, 66%);
+  color: var(--text-color-danger);
   font-weight: 700;
 }
