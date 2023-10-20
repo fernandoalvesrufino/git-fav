@@ -138,8 +138,9 @@ table {
   width: 100%;
   border-collapse: collapse;
 
+  /* border: var(--table-color) solid 1px; */
   border-radius: 1.2rem;
-  border: var(--table-color) solid 1px;
+  border: none;
   
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
 }
@@ -153,8 +154,9 @@ thead {
   background-color: var(--bg-thead);
 }
 
-tr {
+tbody tr {
   border: var(--table-color) solid 1px;
+  border-radius: 1.2rem;
 }
 
 table th {
@@ -163,18 +165,18 @@ table th {
 }
 
 table thead tr th:first-child {
-  border-top-left-radius: .4rem;
+  border-top-left-radius: 1.2rem;
 }
 
-table th:first-child {
-  border-top-left-radius: .4rem;
+table thead tr th:last-child {
+  border-top-right-radius: 1.2rem;
 }
 
-table tr:nth-child(odd) {
+table tbody tr:nth-child(odd) {
   background: var(--bg-line-odd);
 }
 
-table tr:nth-child(even) {
+table tbody tr:nth-child(even) {
   background: var(--bg-line-even);
 }
 
@@ -209,4 +211,5 @@ td.user a p {
 td.remove {
   color: var(--text-color-danger);
   font-weight: 700;
+  cursor: pointer;
 }
