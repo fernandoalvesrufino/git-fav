@@ -138,7 +138,6 @@ table {
   width: 100%;
   border-collapse: collapse;
 
-  /* border: var(--table-color) solid 1px; */
   border-radius: 1.2rem;
   border: none;
   
@@ -152,6 +151,7 @@ table * {
 
 thead {
   background-color: var(--bg-thead);
+  border: var(--table-color) solid 1px;
 }
 
 tbody tr {
@@ -164,13 +164,13 @@ table th {
   text-align: left;
 }
 
-table thead tr th:first-child {
+/* table thead tr th:first-child {
   border-top-left-radius: 1.2rem;
 }
 
 table thead tr th:last-child {
   border-top-right-radius: 1.2rem;
-}
+} */
 
 table tbody tr:nth-child(odd) {
   background: var(--bg-line-odd);
