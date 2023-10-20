@@ -1,27 +1,27 @@
 export class Favorites {
-    constructor(root) {
-        this.root = document.querySelector(root)
-    }
+  constructor(root) {
+    this.root = document.querySelector(root)
+  }
 }
 
 export class FavoritesView extends Favorites {
-    constructor(root) {
-        super(root)
+  constructor(root) {
+    super(root)
 
-        this.update()
-    }
+    this.update()
+  }
 
-    update() {
-        this.removeAllTr()
+  update() {
+    this.removeAllTr()
 
 
-    }
+  }
 
-    removeAllTr() {
-        const tbody = this.root.querySelector('table tbody')
+  removeAllTr() {
+    const tbody = this.root.querySelector('table tbody')
 
-        tbody.querySelectorAll('tr').forEach((tr) => {
-            tr.remove()
-        });
-    }
+    tbody.querySelectorAll('tr').forEach((tr) => {
+      tr.remove()
+    });
+  }
 }
