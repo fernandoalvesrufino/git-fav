@@ -5,27 +5,30 @@ export class Favorites {
   }
 
   load() {
-    this.entries = [
-      {
-        login: 'fernandoalvesrufino',
-        name: "Fernando Alves Rufino",
-        public_repos: '76',
-        followers: '120000'
-      },
-      {
-        login: 'maykbrito',
-        name: "Mayk Brito",
-        public_repos: '76',
-        followers: '120000'
-      }
-    ]
+    this.entries = JSON.parse(localStorage.getItem('@git-fav:')) || []
+
+    // this.entries = [
+    //   {
+    //     login: 'fernandoalvesrufino',
+    //     name: "Fernando Alves Rufino",
+    //     public_repos: '76',
+    //     followers: '120000'
+    //   },
+    //   {
+    //     login: 'maykbrito',
+    //     name: "Mayk Brito",
+    //     public_repos: '76',
+    //     followers: '120000'
+    //   }
+    // ]
   }
 
   delete(user){
     const filteredEntries = this.entries
       .filter(entry => entry.login !== user.login)
 
-    console.log(filteredEntries)
+    this.entries = filteredEntries
+    this.update()
   }
 
 }

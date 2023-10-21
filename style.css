@@ -111,7 +111,7 @@ header {
 
   cursor: pointer;
 
-  transition: all .4s ease-in;
+  transition: all .2s ease-in;
 }
 
 .search button:hover {
@@ -120,7 +120,7 @@ header {
 }
 
 .search button svg path {
-  transition: all .4s ease-in;
+  transition: all .2s ease-in;
 }
 
 .search button:hover svg path {
