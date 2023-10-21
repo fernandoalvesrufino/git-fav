@@ -208,7 +208,10 @@ td.user a p {
   padding-bottom: .8rem;
 }
 
-td.remove {
+.remove{
+  background: none;
+  border: none;
+
   color: var(--text-color-danger);
   font-weight: 700;
   cursor: pointer;

@@ -20,6 +20,14 @@ export class Favorites {
       }
     ]
   }
+
+  delete(user){
+    const filteredEntries = this.entries
+      .filter(entry => entry.login !== user.login)
+
+    console.log(filteredEntries)
+  }
+
 }
 
 export class FavoritesView extends Favorites {
@@ -44,7 +52,13 @@ export class FavoritesView extends Favorites {
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
 
+      row.querySelector('.remove').onclick = () => {
+        const isOK = confirm('Tem certeza que deseja deletar essa linha?')
 
+        if(isOK) {
+          this.delete(user)
+        }
+      }
 
       this.tbody.append(row)
     })
@@ -64,7 +78,9 @@ export class FavoritesView extends Favorites {
       </td>
       <td class="repositories">123</td>
       <td class="followers">123</td>
-      <td class="remove">Remover</td>
+      <td>
+        <button class="remove">Remover</button>
+      </td>
     `
 
     return tr
